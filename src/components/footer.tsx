@@ -1,6 +1,6 @@
 export default function Footer(){
     return(
-        <footer className="flex items-center justify-between w-[100%] p-24 box-border mt-[120px] max-lg:p-10 ">
+        <footer className="flex items-center justify-between w-[90%] box-border mt-[20px] p-3 max-lg:p-10 ">
             <div className="logo">
                 <img className="max-sm:w-[124px] max-sm:h-[]" src="/logo.png" alt="logo" />
             </div>
