@@ -1,12 +1,12 @@
 export default function Footer(){
     return(
-        <footer className="flex items-center justify-between w-[90%] box-border mt-[20px] p-3 max-lg:p-10 ">
+        <footer className="flex items-center justify-between w-[90%] box-border mt-[20px] p-3 max-lg:p-10 max-sm:flex-col max-sm:gap-5 ">
             <div className="logo">
                 <img className="max-sm:w-[124px] max-sm:h-[]" src="/logo.png" alt="logo" />
             </div>
 
             <nav>
-               <ul className="flex items-center gap-10 text-[#ffffff] font-raleway font-[800] text-[14px] max-xl:gap-2 max-md:flex-col max-sm:text-[12px] max-sm:font-[500]">
+               <ul className="flex items-center gap-10 text-[#ffffff] font-raleway font-[800] text-[14px] max-xl:gap-2 max-md:flex-col max-sm:gap-6 max-sm:flex-row max-sm:items-center   max-sm:text-[12px] max-sm:font-[500]">
                     <li className="hover:text-[#E4B40D]"><a href="#">About Us</a></li>
                     <li className="hover:text-[#E4B40D]"><a href="#">Roadmap</a></li>
                     <li className="hover:text-[#E4B40D]"><a href="#">FAQs</a></li>
@@ -16,7 +16,7 @@ export default function Footer(){
 
             <div className="flex flex-col items-center justify-center gap-[12px]  ">
                 <h3 className="text-[#ffffff] text-[30px] font-raleway font-[800] max-lg:text-[14px] max-sm:text-[12px] max-sm:font-[500]">Contact <span className="text-[#E4B40D]">Us</span> </h3>
-                <div className="flex items-center gap-10 max-lg:gap-2 max-sm:flex-col">
+                <div className="flex items-center gap-10 max-lg:gap-2 max-sm:gap-6">
                     <a href="#"><img src="/tg.png" alt="" /></a>
                     <a href="#"><img src="/sm.png" alt="" /></a>
                     <a href="#"><img src="/Twitter.png" alt="" /></a>
