@@ -1,4 +1,24 @@
+import { useState } from "react"
+import MobileNav from "./mobileNav"
+
 export default function Header() {
+    const [isOpen, setIsOpen] = useState(false)
+    const [activeLink, setActiveLink] = useState('/')
+    
+    const openMenu = () => {
+        setIsOpen(true)
+    }
+    const handleActiveLink = (link:string) => {
+        setActiveLink(link)
+    }
+    const navLinks = [
+        { href: '/', label: 'Home' },
+        { href: '#about', label: 'About Us' },
+        { href: '#roadmap', label: 'Roadmap' },
+        { href: '#faqs', label: 'FAQs' },
+        { href: '#contact', label: 'Contact Us' }
+      ];
+    
     return(
         <header className="w-[90%] my-0 mx-[auto] flex items-center justify-between pt-5
           max-md:w-[85%]
@@ -8,14 +28,15 @@ export default function Header() {
             </div>
 
             <nav className = "max-md:hidden " >
-                <ul className=" flex items-center gap-10 text-[#ffffff] 
+                <ul className=" flex items-center gap-10 
                 font-raleway font-[800] text-[18px] 
                 max-xl:gap-4  max-lg:font-[500] max-lg:text-[14px] ">
-                    <li className="hover:text-[#E4B40D]"><a href="/">Home</a></li>
-                    <li className="hover:text-[#E4B40D]"><a href="#">About Us</a></li>
-                    <li className="hover:text-[#E4B40D]"><a href="#">Roadmap</a></li>
-                    <li className="hover:text-[#E4B40D]"><a href="#">FAQs</a></li>
-                    <li className="hover:text-[#E4B40D]"><a href="#">Contact Us</a></li>
+                    {navLinks.map((link, index) => (
+                        <li key={index} >
+                            <a onClick={()=>{handleActiveLink(link.href)}}
+                            className={`hover:text-[#E4B40D] ${activeLink === link.href? "text-[#E4B40D]":"text-[#ffffff] "  } `}
+                             href={link.href}>{link.label}</a></li>
+                    ))}
                 </ul>
             </nav>
 
@@ -25,8 +46,10 @@ export default function Header() {
             </div>
 
             <div className="hidden max-md:block ">
-                <button className="bg-[transparent]"><img src="/hamburger1.png" alt="menu-button" /></button>
+                <button onClick={openMenu} className="bg-[transparent]"><img src="/hamburger1.png" alt="menu-button" /></button>
             </div>
+
+            <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
         </header>
     )
 }
